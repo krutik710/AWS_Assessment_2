@@ -42,6 +42,6 @@ def lambda_handler(event, context):
         # Upload image
         obj = s3.Object(
             bucket_name=destination_bucket,
-            key=object_key,
+            key="resize_"+object_key,
         )
         obj.put(Body=buffer)
